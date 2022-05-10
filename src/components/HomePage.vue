@@ -1,15 +1,18 @@
 <template>
+    <HeaderPage/>
     <h1>This is Home page</h1>
 </template>
 
 <script>
+import HeaderPage from "./HeaderPage.vue";
 export default {
-    name: 'HomePage',
+    name: "HomePage",
     mounted() {
-        let user = localStorage.getItem('user-info');
+        let user = localStorage.getItem("user-info");
         if (!user) {
-            this.$router.push({ name: 'SignUp' })
+            this.$router.push({ name: "SignUp" });
         }
-    }
+    },
+    components: { HeaderPage }
 }
 </script>
